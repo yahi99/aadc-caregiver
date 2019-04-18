@@ -1,0 +1,112 @@
+// PREFACE
+
+  .preface {
+    background: $red;
+    text-align: center;
+    color: $white;
+    font-weight: $font-weight-bold;
+    .container {
+      position: relative;
+      padding: rem-calc(25) rem-calc(45);
+      p {
+        font-family: CeraPro-Medium; 
+        @include fontSize(20px);
+        @include media-breakpoint-up(sm) {
+          @include fontSize(24px); 
+        }    
+      }
+    }
+    border-bottom: $light-red solid rem-calc(15);
+    .btn {
+      color: $white;
+      line-height: 0;
+      border: 3px solid $white;
+      @include fontSize(24px);
+      background: $light-red;
+      padding: rem-calc(11) rem-calc(5) rem-calc(10) rem-calc(7);
+      margin-bottom: 0;
+      &:hover {
+        background: darken($red, 8%)
+      }
+    }
+
+    .toy {
+      margin-bottom: 0;
+    }
+    &.toy-one {
+      .toy {
+        position: absolute;
+        top: rem-calc(-140);
+        right: rem-calc(-15);
+      }
+    }
+
+    // INPAGE
+    &.inpage {
+      .media {
+        @include media-breakpoint-down(sm) {
+          display: block;
+          img {
+            margin-right: 0;
+            margin-bottom: rem-calc(20);
+          }
+        }
+        .media-body {
+          text-align: left;
+          h3 {
+            padding-top: rem-calc(5);
+            @include fontSize(24px);
+            font-family: $cera-black;
+            font-weight: normal;
+            color: $white;
+            margin-bottom: $paragraph-margin-bottom;
+          }
+          p {
+            @include fontSize(16px);
+            font-family: $cera;
+            font-weight: normal;
+            color: $white;
+            max-width: none;
+            margin-bottom: $paragraph-margin-bottom / 2;
+          }
+          a {
+            background: transparent;
+            color: $white;
+            margin-top: rem-calc(10);
+            margin-bottom: 0;
+            display: inline-block;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    &+ .preface {
+      margin-top: rem-calc(25);
+      @include media-breakpoint-up(sm) {
+        margin-top: rem-calc(45);
+      }
+    }
+  }
+
+  body:not(.home) {
+    .preface {
+      .container {
+        padding: rem-calc(35) 5%;
+        @include media-breakpoint-up(sm) {
+          padding: rem-calc(35) rem-calc(45);
+        }
+        p {
+          max-width: rem-calc(600);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+
+
+  

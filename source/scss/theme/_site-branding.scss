@@ -1,0 +1,68 @@
+// SITE BRANDING
+
+#site-branding {
+	margin-top: rem-calc(15);
+	@include media-breakpoint-up(sm) {
+		margin-top: rem-calc(30);
+	}
+	@include media-breakpoint-up(lg) {
+		margin-top: rem-calc(20);
+	}
+	.container {
+		//position: relative;
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			justify-content: space-between;
+			//max-width: none;
+			padding-right: 0;
+			padding-left: 0;
+		}
+		#logo {
+			@include fontSize(40px);
+			white-space: nowrap;
+			font-family: $cera-black;
+			display: inline-block;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	nav {
+		@include media-breakpoint-up(lg) {
+			.primary-gradient-block {
+				display: none;
+			}
+		}
+	}
+}
+
+#menu-container {
+	display: none;
+	background: $primary;
+	width: 100%;
+	left: 0;
+	border-bottom: $light-red solid rem-calc(15);
+	top: rem-calc(110);
+	@include media-breakpoint-up(sm) {
+		top: rem-calc(125);
+	}
+	@include media-breakpoint-up(lg) {
+		top: auto;
+		border-bottom: 0;
+	}
+	
+	
+	@include media-breakpoint-up(lg) {
+		background: transparent;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex!important;
+		height: 100%;
+	}
+}
+
+
+
+
+
+

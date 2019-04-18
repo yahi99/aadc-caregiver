@@ -1,0 +1,41 @@
+// Radius Box with Image and Text
+
+.radius-box-image-text {
+	max-width: rem-calc(550);
+	margin-right: 5%;
+	margin-left: 5%;
+	@include media-breakpoint-up(sm) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	background: $white;
+	border-radius: $border-radius-lg;
+	padding: rem-calc(25) rem-calc(25);
+	@include media-breakpoint-up(md) {
+		padding: rem-calc(25) rem-calc(55);
+	}
+	height: 100%;
+	text-align: center;
+	img {
+		margin-bottom: rem-calc(22);
+	}
+	.headline {
+		color: $secondary;
+  		font-weight: $font-weight-bold;
+  		text-transform: uppercase;
+  		@include fontSize(18px);
+  		max-width: 100%!important;
+	}
+	p {
+		font-weight: $font-weight-normal;
+		max-width: 100%!important;
+	}
+}
+
+.home {
+	.radius-box-image-text {
+		@include media-breakpoint-up(md) {
+			padding: rem-calc(25) rem-calc(65);
+		}
+	}
+}

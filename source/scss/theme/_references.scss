@@ -1,0 +1,16 @@
+// REFERENCES
+
+#references {
+  @include fontSize(14px);
+  .container {
+    color: magenta;
+    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(15);
+    @include media-breakpoint-up(md) {
+      margin-top: rem-calc(50);
+    }
+  }
+  br {
+  	float: left;
+  }
+}

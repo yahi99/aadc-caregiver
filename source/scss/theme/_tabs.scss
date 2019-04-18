@@ -1,0 +1,353 @@
+// TABS
+
+#tabs {
+  background: $primary;
+  margin-top: rem-calc(25);
+  @include media-breakpoint-up(sm) {
+    margin-top: rem-calc(45);
+  }
+
+  h2 {
+    font-family: $cera-black;
+    color: $white;
+    @include fontSize(24px);
+    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(40);
+    @include media-breakpoint-up(md) {
+      @include fontSize(27px);
+      @include make-col(9);
+      margin-top: rem-calc(40);
+      margin-bottom: rem-calc(50);
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(7);
+    }
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .callout {
+    background: darken($orange, 7%);
+    border-top: rem-calc(4) solid $light-orange;
+    border-bottom: rem-calc(4) solid $light-orange;
+    font-family: $cera-bold;
+    @include fontSize(20px);
+    color: $white;
+    text-align: center;
+    .container {
+      padding-top: rem-calc(10);
+      padding-bottom: rem-calc(10);
+    }
+  }
+
+  .tabs {
+    background: $white;
+    border-bottom: rem-calc(10) solid $primary-light;
+    ul {
+      @include make-row();
+      margin-bottom: 0;
+      padding-left: 0;
+      max-width: rem-calc(1000);
+      margin-right: auto;
+      margin-left: auto;
+      li {
+        @include make-col-ready();
+        @include make-col(6);
+        text-align: center;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+        a {
+          font-family: $cera-black;
+          color: $tab-color-text;
+          text-transform: uppercase;
+          @include fontSize(40px);
+          background: $tab-color;
+          padding-top: rem-calc(5);
+          &.active {
+            background: $primary;
+            color: $white;
+            //padding-top: rem-calc(5);
+          }
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  
+  .next {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+      background: $tab-color;
+      nav{
+        background: transparent;
+        border: 0;
+        li {
+          @include make-col-ready();
+          @include make-col(12);
+          text-align: right;
+          a {
+            &.active {
+              background: transparent;
+            }
+          }
+        }
+      }
+      .container {
+        padding-top: rem-calc(5);
+        padding-bottom: rem-calc(5);
+      }
+      .icon-right-open {
+        font-size: 95%;
+      }
+    }
+  }
+
+  //Custom Media Object
+  .media {
+    margin-bottom: rem-calc(40);
+    min-height: rem-calc(120);
+    @include media-breakpoint-up(sm) {
+      margin-bottom: rem-calc(60);
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      @include media-breakpoint-up(sm) {
+        margin-right: rem-calc(25);
+        width: auto;
+        height: auto;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(10);
+    }
+    position: relative;
+    z-index: 0;
+    align-items: stretch;
+    .line {
+      display: block;
+      width: rem-calc(5);
+      background: $light-orange;
+      position: absolute;
+      left: rem-calc(28);
+      height: 99%;
+      z-index: -1;
+      @include media-breakpoint-up(sm) {
+        left: rem-calc(45);
+      }
+    }
+    .icon-down-open {
+      position: absolute;
+      bottom: -5px;
+      color: $light-orange;
+      @include fontSize(28px);
+      line-height: 0;
+      left: rem-calc(10.5);
+      z-index: -1;
+      @include media-breakpoint-up(sm) {
+        left: rem-calc(28);
+      }
+    }
+    h3 {
+      @include fontSize(23px);
+      color: $light-orange;
+      font-weight: $font-weight-bold;
+      margin-top: rem-calc(10);
+      margin-bottom: rem-calc(15);
+      line-height: 1.3;
+    }
+    ul.bullets {
+      margin-bottom: 0;
+      li {
+        color: $white;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.tab-heading {
+  color: $primary;
+  text-align: center;
+  font-style: italic;
+  @include fontSize(23px);
+  font-weight: $font-weight-normal;
+  line-height: 1.3;
+  margin-bottom: rem-calc(15);
+}
+
+.tab-content{
+  display: none;
+
+  figure {
+    margin-top: rem-calc(35);
+    @include media-breakpoint-up(md) {
+      margin-top: rem-calc(50);
+    }
+  }
+
+  .fixed-spacer {
+    margin-top: rem-calc(50);
+  }
+}
+
+.tab-content.current{
+  display: inherit;
+}
+
+// MENU
+#main ul.tabs {
+  margin-top: rem-calc(20);
+  @include make-row();
+  margin-bottom: 0;
+    li {
+      @include make-col-ready();
+      @include make-col(6);
+      cursor: pointer;
+      background-image: none;
+      color: $white;
+      font-weight: $font-weight-bolder;
+      text-align: center;
+      text-transform: uppercase;
+      @include fontSize(18px);
+      background: $primary;
+      margin-bottom: 0;
+      padding-top: rem-calc(20);
+      padding-bottom: rem-calc(20);
+      &.current {
+        background: $light-gray;
+        color: $primary;
+        @include fontSize(20px);
+      }
+      &:first-child {
+        border-right: 4px solid $white;
+      }
+      &:last-child {
+        border-left: 4px solid $white;
+      }
+    }
+}
+
+
+
+
+/*
+SCSS variables and mixins
+*/
+$color__main: #444;
+$color__active: grey;
+$background__active: #eee;
+$width__tabs-side: 150px;
+$breakpoint: 767.98px;
+@mixin tab-active() {
+  background: $color__main;
+  color: $background__active;
+}
+
+
+
+/* 
+The project specific CSS starts here
+This is the minimum CSS that you will need in order for this to work
+*/
+
+// Accordion for small screens (mobile first principle)
+.tabbed-content {
+  .tabs {
+    display: none;
+  }
+  .item {
+    min-height: 2em; // We need a minimum height for each item or else the accordion buttons would dissapear
+    overflow: hidden;
+    &::before {
+      content: attr(data-title); // Instead of polluting the HTML with a duplicate set of tabs, we get the accordion using the data-title attribute.
+      font-family: $cera-black;
+      color: $tab-color-text;
+      @include fontSize(40px);
+      display: block;
+      text-align: center;
+      background: url('images/plus-circle.svg') $tab-color;
+      background-repeat: no-repeat;
+      background-position: right center;
+      text-transform: uppercase;
+    }
+    .item-content { // We hide the inactive content with zero opacity instead of "display:none" because this allows us to apply transition effects if we want. 
+      display: none;
+      height: 0;
+    }
+    &.active {
+      &::before {
+        background-color: $primary;
+        background-image: none;
+        color: $white;
+        border-bottom: 3px solid $primary-light;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      .item-content {
+        display: block;
+        height:auto;
+        &> .container {
+          a {
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+// Tabs for larger screens
+@media all and (min-width: $breakpoint) {
+  .tabbed-content {
+    .tabs {
+      display: block;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+        }
+      }
+    }
+    .item {
+      display: none;
+      min-height: 0;
+      overflow: hidden;
+      &.active {
+        display: block;
+      }
+      &::before {
+        display: none;
+      }
+    }
+    // Tabs on the side (works only on big screens)
+    &.tabs-side {
+      .tabs {
+        width: $width__tabs-side;
+        float: left;
+        li {
+          display: block;
+        }
+      }
+      .item {
+        margin-left: $width__tabs-side;
+      }
+    }  
+  }
+}
+
+
+
+

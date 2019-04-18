@@ -1,0 +1,80 @@
+// GLOSSARY
+#glossary-menu-wrapper {
+  height: rem-calc(34);
+  margin-bottom: 0;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: rem-calc(40.5);
+  }
+}
+
+#glossary-menu {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  text-align: center;
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+
+  li {
+    display: inline;
+    @include fontSize(18px);
+    @include media-breakpoint-up(sm) {
+      @include fontSize(27px);
+    }
+    font-family: $cera-bold;
+    font-weight: normal;
+    margin-right: rem-calc(5);
+    a {
+      color: $gray-600;
+      text-decoration: underline;
+      &:active {
+        color: $orange;
+      }
+    }
+    &.active {
+      a {
+        color: $orange;
+      }
+    }
+  }
+  &.sticky {
+    text-align: center;
+    background: $white;
+    top: 0;
+    left: 0;
+    @include media-breakpoint-up(sm) {
+      left: auto;
+      margin-left: rem-calc(-5);
+    }
+    margin-top: 0;
+    padding-top: rem-calc(5);
+    border-bottom: rem-calc(2) solid $orange;
+  }
+}
+
+#glossary-content {
+  h2 {
+    font-family: $cera-black;
+    font-weight: normal;
+    @include fontSize(30px);
+  }
+  p {
+    strong {
+      color: $primary;
+    }
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  z-index: $zindex-fixed;
+  top: 0;
+  width: 100%;
+  left: -50%!important;
+  transform: translateX(50%)!important;
+}

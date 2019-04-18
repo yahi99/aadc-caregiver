@@ -1,0 +1,28 @@
+// MOD CHART
+
+.mod-chart {
+  @include media-breakpoint-up(md) {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .wp-block-column {
+    &:first-child {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem-calc(40)!important;
+      }
+    }
+    &:last-child {
+      border-top: 1px solid $medium-gray;
+      padding-top: rem-calc(40);
+      @include media-breakpoint-up(md) {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+  }
+}

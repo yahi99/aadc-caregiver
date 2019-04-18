@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*
+Theme Name: PTC HCP
+Theme URI: 
+Author: Dudnyk
+Author URI: https://dudnyk.com/
+Tabs
+Version: 1.0
+*/
+@import "non-theme/functions";
+@import "non-theme/mixins/rem_fonts";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/custom-forms";
+@import "theme/fontello-2";
+@import "theme/form";

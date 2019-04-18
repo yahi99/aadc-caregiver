@@ -1,0 +1,11 @@
+// IE10 Warning and browser upgrade
+.ie10 {
+  display: none;
+}
+
+html[data-useragent*='MSIE 10.0'] .ie10 { display: block; }
+
+.browserupgrade {
+	background: $danger;
+	padding: rem-calc(20);
+}

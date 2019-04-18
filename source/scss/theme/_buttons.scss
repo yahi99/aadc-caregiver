@@ -1,0 +1,47 @@
+// BUTTONS
+
+.btn-outline-primary {
+	text-transform: uppercase;
+	background: rgba(#B1E5F9, .28);
+	padding-top: $btn-padding-y + .1rem;
+	padding-right: $btn-padding-x - .25rem;
+	border-width: $border-width;
+}
+
+.btn-link {
+	&.inline {
+		text-align: left;
+		@include fontSize(18px);
+    	font-family: $cera-medium;
+    	color: $red;
+    	padding: 0;
+    	border: 0;
+    	margin-bottom: $paragraph-margin-bottom;
+    	i {
+    		margin-left: rem-calc(5);
+    	}
+	}
+}
+
+.btn.postscript-style {
+  padding-bottom: $btn-padding-y + .2rem;
+  padding-right: $btn-padding-x - .5rem;
+  letter-spacing: rem-calc(.75);
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  color: $white;
+  border: $border-width solid $white;
+  background: $primary-light;
+  margin-bottom: 0;
+  &:hover {
+    background: lighten($primary, 10%)
+  }
+  i {
+    @include fontSize(24px);
+    line-height: 0;
+  }
+  &.no-text {
+    line-height: 0;
+    padding: rem-calc(11) rem-calc(5) rem-calc(10) rem-calc(7);
+  }
+}

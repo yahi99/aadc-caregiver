@@ -1,0 +1,92 @@
+// Modal
+
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba($black, .4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $zindex-modal-backdrop;
+}
+.opened:before {
+  display: block;
+}
+.opened .modal-dialog {
+  top: 50%;
+  @include media-breakpoint-up(sm) {
+    top: 45%;
+  }
+  transform: translate(-50%, -50%);
+}
+.modal-dialog {
+  box-align: center;
+  border: solid $red rem-calc(5);
+  border-bottom: solid $red rem-calc(6);
+  padding: rem-calc(30) rem-calc(20);
+  @include media-breakpoint-up(md) {
+    padding: rem-calc(60) rem-calc(40);
+  }
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  background: $white;
+  text-align:center;
+  z-index: $zindex-modal;
+  width: 90%;
+  @include media-breakpoint-up(sm) {
+    width: 65%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: rem-calc(780);
+  }
+  transform: translate(-50%, -500%);
+  transition: transform 1s ease-out;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#interstitialModal, #physicianExitModal {
+  a {
+    display: block;
+    margin-top: rem-calc(20);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    @include fontSize(18px);
+  }
+  .btn-outline-primary {
+    width: 100%;
+    padding-top: rem-calc(15);
+    padding-bottom: rem-calc(15);
+    text-transform: uppercase;
+  }
+
+  .modal-close {
+    color: $primary;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .btn-outline-primary {
+      width: rem-calc(260);
+    }
+  }
+}
+
+#physicianExitModal {
+  @include media-breakpoint-up(md) {
+    .btn-outline-primary {
+      width: rem-calc(340);
+    }
+  }
+}

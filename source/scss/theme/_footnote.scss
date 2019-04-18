@@ -1,0 +1,37 @@
+// Footnote
+
+ol.letters {
+	margin-bottom: $paragraph-margin-bottom;
+    counter-reset: listStyle;
+    display: table;
+    margin-left: 5px;
+    padding-left: 0;
+    li {
+		@include fontSize(13px);
+    	margin: 1em;
+		counter-increment: listStyle;
+		display: table-row;
+		list-style: none;
+    }
+	li:before {
+	    margin-left: -5px;
+	    content: counter(listStyle,lower-alpha);
+	    display: inline-block;
+	    text-align: right;
+	    padding-right: .1em;
+	    height: 0;
+	    line-height: 1;
+	    position: relative;
+	    top: -0.7em;
+	    vertical-align: baseline !important;
+	    font-size: 70%;
+	}
+}
+
+
+
+
+
+
+
+

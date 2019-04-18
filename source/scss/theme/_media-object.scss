@@ -1,0 +1,67 @@
+// MEDIA OBJECT
+
+.media {
+  img {
+    &.top {
+      align-self: flex-start;
+    }
+    &.middle {
+      align-self: center;
+    }
+    &.bottom {
+      align-self: flex-end;
+    }
+    margin-right: rem-calc(15);
+  }
+  .media-body {
+    &.top {
+      align-self: flex-start;
+    }
+    &.middle {
+      align-self: center;
+    }
+    &.bottom {
+      align-self: flex-end;
+    }
+  }
+
+}
+
+
+// MEDIA SWAP - bottom on desktop and top on mobile
+.media-swap {
+  margin-top: rem-calc(25);
+  margin-bottom: rem-calc(25);
+  @include media-breakpoint-up(sm) {
+    margin-top: rem-calc(40);
+    margin-bottom: 0;
+  }
+
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(11);
+  }
+
+  .media {
+    .top {
+      @include media-breakpoint-up(md) {
+        align-self: flex-end;
+      }
+    }
+    img {
+      margin-right: rem-calc(20);
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &:not(:last-child) {
+    margin-bottom: rem-calc(35);
+  }
+  }
+}
+
+
+

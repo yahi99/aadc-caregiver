@@ -1,0 +1,39 @@
+// Site map
+
+#site-map {
+
+  ul {
+  	display: block;
+  }
+  .menu-item,  .dropdown-item {
+    display: block;
+  }
+  .nav-link {
+  	padding: 0;
+  	padding-top: 1rem;
+  	padding-bottom: 1rem;
+  	font-weight: 600;
+    display: inline-block;
+  }
+  .dropdown-menu {
+	margin-left: 1rem;
+  max-width: 300px;
+  }
+
+  .dropdown-item {
+  	margin-bottom: 1rem;
+  	text-decoration: none;
+    display: block;
+  }
+  
+  article {
+    &+ .container {
+      margin-bottom: rem-calc(25);
+      @include media-breakpoint-up(sm) {
+        margin-bottom: rem-calc(45);
+      }
+    }
+  }
+
+
+}

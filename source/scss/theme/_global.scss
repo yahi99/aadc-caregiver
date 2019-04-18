@@ -1,0 +1,87 @@
+// Global
+
+// Hide empty p tags put in by WP BLOCKS
+p:empty {
+	display: none;
+}
+
+html {
+	overflow-x: hidden;
+
+}
+
+body {
+	overflow-x: hidden!important;
+	-ms-overflow-style-x: hidden!important;
+}
+
+body:not(.user-is-tabbing) {
+	a, button {
+		&:focus {
+		  outline: none;
+		  box-shadow: none!important;
+		} 
+	}
+}
+
+.magenta {
+	color: magenta;
+}
+
+body:not(.home) {
+	#content {
+		background: $white;
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.btn.disabled {
+	cursor: no-drop!important;
+}
+
+address {
+	h3 {
+		margin-bottom: 0;
+	}
+}
+
+.img-fluid {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.primary-color {
+	color: $primary;
+}
+
+.mb-0 {
+	margin-bottom: 0!important;
+}
+
+// Social Icons
+#st-2 {
+	@include media-breakpoint-up(md) {
+		top: 140px!important;
+	}
+}
+
+.page-id-322, .page-id-333 {
+	.entry-content {
+		h1 {
+      padding-top: rem-calc(40);
+      @include media-breakpoint-up(sm) {
+        padding-top: 0;
+      }
+		}
+	}
+}
+
+//Terms of use
+.page-id-449 .entry-content .container a {
+  text-decoration: underline;
+}

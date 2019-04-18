@@ -1,0 +1,67 @@
+// FLUID IMAGE RIGHT
+
+.fluid-container {
+  &.image {
+    background: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+    &.right {
+      position: relative;
+      @include media-breakpoint-down(sm) {
+        height: auto!important;
+      }
+      .container {
+        text-align: center;
+        @include media-breakpoint-up(md) {
+          text-align: left;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          div {
+            @include make-col-ready();
+            @include media-breakpoint-up(md) {
+              @include make-col(10);
+            }
+          }
+        }
+        .headline {
+          margin-top: rem-calc(35);
+          line-height: $line-height-base;
+          @include media-breakpoint-up(md) {
+            margin-top: 0;
+          }
+          @include fontSize(18px);
+          color: $primary;
+          font-weight: $font-weight-bolder;
+        }
+        p {
+          font-weight: $font-weight-normal;
+          margin-bottom: rem-calc(35);
+        }
+        a {
+          margin-bottom: rem-calc(25);
+          @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+          }
+        }
+      }
+      figure {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        img {
+          @include media-breakpoint-down(xs) {
+            max-width: 100%;
+            height: auto;
+          }
+          @include media-breakpoint-up(md) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}
