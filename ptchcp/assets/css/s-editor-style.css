@@ -1,0 +1,12 @@
+.wp-block {
+	max-width: 1400px;
+	margin-left: 20px!important;
+}
+
+.editor-styles-wrapper .components-base-control__label {
+	font-weight: bold;
+	color: red;
+	border-bottom: red 1px solid;
+	display: block;
+	margin-bottom: .6rem;
+}

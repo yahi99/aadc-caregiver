@@ -1,0 +1,1 @@
+var ccBox=document.getElementById("cc-banner"),ccButton=document.getElementById("cc-dismiss");Cookies.get("cc-box")||(ccBox.classList.add("opened"),ccButton.onclick=function(){Cookies.set("cc-box",!0,{expires:14}),ccBox.classList.remove("opened"),ccBox.classList.add("closed")});
